@@ -2,21 +2,26 @@
 #define _HOLBERTON__H_
 
 #include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 /**
 * struct print - structure for printing various types
-* @t: type to print
-* @f: function to print
+* @type: type to print
+* @func: function to print
 */
 typedef struct print
 {
 	char *type;
-	int (*func)(va_list);
+	void (*func)(va_list);
 } print_t;
 
-int _putchar(char c);
-void _puts(char *str);
 int _printf(const char *format, ...);
-int print_c(va_list c);
-int print_s(va_list s);
-int print_porcent(va_list p);
+
+int _putchar(char c);
+int _strlen(char *l);
+void _puts(char *str);
+void print_c(va_list c);
+void print_s(va_list s);
+void print_porcent(va_list);
+
 #endif  /* _HOLBERTON_H */
