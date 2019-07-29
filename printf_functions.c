@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
-#include <stdarg.h>
 
 /**
 * print_c - prints a char
@@ -10,9 +8,7 @@
 */
 void print_c(va_list c)
 {
-	char ch = (char)va_arg(c, int);
-
-	_putchar(ch);
+	_putchar(va_arg(c, int));
 }
 
 /**
@@ -23,8 +19,25 @@ void print_c(va_list c)
  */
 void print_s(va_list s)
 {
-	int count;
-	char *str = va_arg(s, char *);
+	int len;
 
-	_puts(str);
+	char *str = (va_arg(s, char *));
+
+	len = _strlen(str);
+
+	write(1, str, len);
 }
+/**
+ * print_porcent - prints a special character '%'
+ * @p: string to print
+ *
+ * Return: number of chars printed
+ */
+void print_porcent(va_list p)
+{
+	if (p != NULL)
+		_putchar('%');
+	else
+		_putchar(va_arg(p, int));
+}
+

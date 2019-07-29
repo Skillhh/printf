@@ -1,33 +1,43 @@
 #include "holberton.h"
-#include <stdlib.h>
-
 /**
  * _printf - checks if there is a valid format specifier
  * @format: possible format specifier
  *
  * Return: pointer to valid function or NULL
  */
-int _printf (const char *format,...)
+int _printf(const char *format, ...)
 {
 
 	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"%", print_porcent},
 		{NULL, NULL}
 	};
 	va_list valist;
-	int i = 0;
-	int count = 0;
+	int i, j, length;
 
-	va_star(valist, format);
-	while (format[i])
+	if (format != NULL)
 	{
-		for (; format[i] != '%' && format[i]; i++)
+		va_start(valist, format);
+		for (i = 0; format[i]; i++)
 		{
-			_putchar(format[i]);
-			count++;
+			if (format[i] == '%')
+			{
+				for (j = 0; j < 3; j++)
+				{
+					if (p[j].type[0] == format[i + 1])
+						p[j].func(valist);
+				}
+			}
+			else
+			{
+				if (format[i - 1] != '%')
+					_putchar(format[i]);
+			}
 		}
-		if (!format[i])
-			return (count);
 	}
+	length = i;
+	va_end(valist);
+	return (length);
 }
