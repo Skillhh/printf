@@ -1,22 +1,21 @@
 # c - printf
-======================
 This projec is abour the printf function which is a knowledge of C programming.
 ---------
 Autor & contributor
 -----------
 Giovany Ortegon
 Vivian Ortiz
+-----------
 Description
-------------
-Printf is the C language function to do formatted printing.
+*Printf is the C language function to do formatted printing.
 -----------
 Declaration
 Following is the declaration for printf()function.
 prototype: int _printf(const char *format, ...);
-
+-----------
 ### Specifer & Output
 * format - This is the string taht contains the text to be written to stdout. it can optionally contain embedden format tags that are replaced by the values specified in subsequent additional arguments and formatted as requested.
-====================
+------------
 Specifier & Output
 *C: Character.
 *d or i: Signed decimal integer.
