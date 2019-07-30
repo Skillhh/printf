@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
-		{"%", print_porcent},
 		{NULL, NULL}
 	};
 	va_list valist;
@@ -23,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%')
 			{
-				for (j = 0; j < 3; j++)
+				for (j = 0; j < 2; j++)
 				{
 					if (p[j].type[0] == format[i + 1])
 						p[j].func(valist);
@@ -31,10 +30,14 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				if (format[i - 1] != '%')
+				if (format[i - 1] != '%' && format[i] != '%')
 					_putchar(format[i]);
 			}
 		}
+	}
+	else
+	{
+		return (-1);
 	}
 	length = i;
 	va_end(valist);
