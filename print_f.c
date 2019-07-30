@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 				for (j = 0; j < 2; j++)
 				{
 					if (p[j].type[0] == format[i + 1])
+					{	
 						p[j].func(valist);
+						i = i + 2;
+					}
 				}
 			}
 			else if (format[i] == '%' && format[i + 1] == '%')
