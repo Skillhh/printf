@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	print_t p [] = {{"c", print_c}, {"s", print_s}, {NULL, NULL}};
 	va_list valist;
-	int i, j, len;
+	int i, j;
 
 	if (format != NULL || (format[0] != '%' && format[1] != '\0'))
 	{
@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 	}
 	else
 		return (-1);
-	len = i;
 	va_end(valist);
-	return (len);
+	return (0);
 }
