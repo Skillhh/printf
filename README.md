@@ -47,4 +47,4 @@ Widith & Decription
 =========
 Example
 ------------
-The following example shows the usage of printf() function. 
+The following example shows the usage of printf() function.
