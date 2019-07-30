@@ -16,16 +16,19 @@ void print_c(va_list c)
 void print_s(va_list s)
 {
 	int len;
-	
+
 	char *str = (va_arg(s, char *));
-	if (str != NULL)	
+
+	if (str != NULL)
 	{
 		len	= _strlen(str);
+
 		write(1, str, len);
 	}
 	else
 	{
 		str = "(null)";
-		write(1,str,6);
+
+		write(1, str, 6);
 	}
 }

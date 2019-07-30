@@ -29,13 +29,13 @@ int _printf(const char *format, ...)
 				}
 			}
 			else
-			{ 
+			{
 				if (format[i - 1] != '%' && format[i] != '%')
 					_putchar(format[i]);
 			}
 		}
 	}
-	else 
+	else
 	{
 		return (-1);
 	}
