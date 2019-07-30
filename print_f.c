@@ -13,14 +13,14 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_list valist;
-	int i, j, length;
+	int i, j, len;
 
 	if (format != NULL)
 	{
 		va_start(valist, format);
 		for (i = 0; format[i]; i++)
 		{
-			if (format[i] == '%')
+			if (format[i] == '%' && format[i + 1] != '%')
 			{
 				for (j = 0; j < 2; j++)
 				{
@@ -28,10 +28,13 @@ int _printf(const char *format, ...)
 						p[j].func(valist);
 				}
 			}
+			else if (format[i] == '%' && format[i + 1] == '%')
+			{
+				_putchar(format[i]);
+			}
 			else
 			{
-				if (format[i - 1] != '%' && format[i] != '%')
-					_putchar(format[i]);
+				_putchar(format[i]);
 			}
 		}
 	}
@@ -39,7 +42,7 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	length = i;
+	len = i;
 	va_end(valist);
-	return (length);
+	return (len);
 }
