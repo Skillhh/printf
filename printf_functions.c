@@ -16,27 +16,16 @@ void print_c(va_list c)
 void print_s(va_list s)
 {
 	int len;
-
+	
 	char *str = (va_arg(s, char *));
-
-	if (s != NULL)
+	if (str != NULL)	
 	{
-		len = _strlen(str);
-
+		len	= _strlen(str);
 		write(1, str, len);
-		return;
 	}
-	write(1, "(nil)", 5);
-}
-/**
- * print_porcent - prints a special character '%'
- * @p: string to print
- */
-void print_porcent(va_list p)
-{
-	if (p != NULL)
-		_putchar('%');
 	else
-		_putchar(va_arg(p, int));
+	{
+		str = "(null)";
+		write(1,str,6);
+	}
 }
-

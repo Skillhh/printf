@@ -22,6 +22,5 @@ int _strlen(char *l);
 void _puts(char *str);
 void print_c(va_list c);
 void print_s(va_list s);
-void print_porcent(va_list);
 
 #endif  /* _HOLBERTON_H */
