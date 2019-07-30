@@ -7,11 +7,11 @@
  */
 int _printf(const char *format, ...)
 {
-	print_t p[] = {{"c", print_c}, {"s", print_s}, {NULL, NULL}};
+	print_t p [] = {{"c", print_c}, {"s", print_s}, {NULL, NULL}};
 	va_list valist;
 	int i, j, len;
 
-	if (format != NULL || (format [0] != '%' && format[1] != '\0'))
+	if (format != NULL || (format[0] != '%' && format[1] != '\0'))
 	{
 		va_start(valist, format);
 		for (i = 0; format[i]; i++)
@@ -21,26 +21,20 @@ int _printf(const char *format, ...)
 				for (j = 0; j < 2; j++)
 				{
 					if (p[j].type[0] == format[i + 1])
-					{	
+					{
 						p[j].func(valist);
 						i = i + 2;
 					}
 				}
 			}
 			else if (format[i] == '%' && format[i + 1] == '%')
-			{
 				_putchar(format[i]);
-			}
 			else
-			{
 				_putchar(format[i]);
-			}
 		}
 	}
 	else
-	{
-		return(-1);
-	}
+		return (-1);
 	len = i;
 	va_end(valist);
 	return (len);
