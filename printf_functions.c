@@ -3,8 +3,6 @@
 /**
 * print_c - prints a char
 * @c: char to print
-*
-* Return: always 1
 */
 void print_c(va_list c)
 {
@@ -14,8 +12,6 @@ void print_c(va_list c)
 /**
  * print_s - prints a string
  * @s: string to print
- *
- * Return: number of chars printed
  */
 void print_s(va_list s)
 {
@@ -23,15 +19,18 @@ void print_s(va_list s)
 
 	char *str = (va_arg(s, char *));
 
-	len = _strlen(str);
+	if (s != NULL)
+	{
+		len = _strlen(str);
 
-	write(1, str, len);
+		write(1, str, len);
+		return;
+	}
+	write(1, "(nil)", 5);
 }
 /**
  * print_porcent - prints a special character '%'
  * @p: string to print
- *
- * Return: number of chars printed
  */
 void print_porcent(va_list p)
 {

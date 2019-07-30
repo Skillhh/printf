@@ -7,7 +7,6 @@
  */
 int _printf(const char *format, ...)
 {
-
 	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
