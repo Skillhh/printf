@@ -2,43 +2,40 @@
 /**
  * _printf - checks if there is a valid format specifier
  * @format: possible format specifier
- *
  * Return: pointer to valid function or NULL
  */
 int _printf(const char *format, ...)
 {
-	print_t p[] = { {"c", print_c}, {"s", print_s},{NULL, NULL} };
+	print_t p[] = { {"c", print_c}, {"s", print_s}, {"%", print_per} };
 	va_list valist;
-	int i, j, len = 0;
-
-	if (format != NULL)
+int i = 0, c = 0, d = 0, cuenf = 0, len = 0, e = 0;
+	va_start(valist, format);
+	if (format == NULL)
+		return (-1);
+	while (format != NULL && format[i] != 0)
 	{
-		va_start(valist, format);
-		for (i = 0; format[i]; i++)
+		c = 0;
+		if (format[i] == '%')
 		{
-			if (format[i] == '%' && format[i + 1] != '%')
+			for (d = 0; d < 3; d++)
 			{
-				for (j = 0; p[j].type; j++)
+				if (format[i + 1] == 0)
+					return (-1);
+				if (format[i + 1] == *(p[d].type))
 				{
-					if (p[j].type[0] == format[i + 1])
-					{
-						len += p[j].func(valist);
-						i = i + 1;
-					}
+					cuenf = cuenf + p[d].func(valist);
+					c = 2;
+					e = e + 2;
+					i = i + 1;
+					break;
 				}
 			}
-			else if (format[i] == '%' && format[i + 1] == '%')
-			{
-				len += _putchar(format[i]);
-				i++; }
-			else
-				len += _putchar(format[i]);
 		}
+		if (c == 0)
+			_putchar(format[i]);
+		i = i + 1;
 	}
-	else
-	{
-		return (-1);
-	}
+	len = i + cuenf - e;
 	va_end(valist);
 	return (len);
 }

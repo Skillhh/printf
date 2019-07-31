@@ -36,4 +36,14 @@ int print_s(va_list s)
 	}
 	return (len);
 }
-
+/**
+ *print_per - Print percent.
+ *@p: integer
+ *Return: integer
+ */
+int print_per(va_list p)
+{
+	(void) p;
+	_putchar('%');
+	return (1);
+}
