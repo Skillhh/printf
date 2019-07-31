@@ -22,5 +22,6 @@ int _strlen(char *l);
 int _puts(char *str);
 int print_c(va_list c);
 int print_s(va_list s);
+int print_per(va_list p);
 
 #endif  /* _HOLBERTON_H */
