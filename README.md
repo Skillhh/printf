@@ -18,6 +18,26 @@ Declaration
 Following is the declaration for printf()function.
 prototype: int _printf(const char *format, ...);
 -----------
+Requirements
+-------------
+General
+*Allowed editors: vi, vim, emacs.<br>
+*All your files will be compiled on Ubuntu 14.04 LTS.<br>
+*Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic. <br>
+*All your files should end with a new line.<br>
+*A README.md file, at the root of the folder of the project is mandatory>br>
+*Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl<br>
+*You are not allowed to use global variables>br>
+*No more than 5 functions per file.<br>
+*In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t.
+*have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation.<br>
+*Our main.c files might be different from the one shown in the examples.<br>
+*The prototypes of all your functions should be included in your header file called holberton.h. <br>
+*Don’t forget to push your header file.<br>
+*All your header files should be include guarded.<br>
+*Note that we will not provide the _putchar function for this project.<br>
+
+---------------
 Specifer & Output
 * format - This is the string taht contains the text to be written to stdout. it can optionally contain embedden format tags that are replaced by the values specified in subsequent additional arguments and formatted as requested.
 ------------
@@ -48,14 +68,12 @@ Flags & Description
 *#: Used with o, x or X specifiers the value is preceded with 0, 0x or 0X respectively for values different than zero. Used with e, E and f, it forces the written output to contain a decimal point even if no digits would follow. By default, if no digits follow, no decimal point is written. Used with g or G the result is the same as with e or E but trailing zeros are not removed.<br>
 *0: Left-pads the number with zeroes (0) instead of spaces, where padding is specified (see width sub-specifier).<br>
 
-------------
-widith & Decription
-------------
-*(number): Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.<br>
-* *: The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.<br>
 -----------
 Example
 ------------
 The following 
-<img src = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiPupDX1d_jAhVNj1kKHehpBx0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dy8K0Z9VEFyw&psig=AOvVaw3EM61x0ubRw7vw4iWkwI6L&ust=1564679674720785">
-
+int _printf(const char *format, ...)
+{
+	print_t p[] = { {"c", print_c}, {"s", print_s}, {"%", print_per},
+			{"d", print_di}, {"i", print_di} };
+	va_list valist;<br>
