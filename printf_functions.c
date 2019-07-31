@@ -4,16 +4,16 @@
 * print_c - prints a char
 * @c: char to print
 */
-void print_c(va_list c)
+int print_c(va_list c)
 {
-	_putchar(va_arg(c, int));
+	return _putchar(va_arg(c, int));
 }
 
 /**
  * print_s - prints a string
  * @s: string to print
  */
-void print_s(va_list s)
+int print_s(va_list s)
 {
 	int len;
 
@@ -31,4 +31,6 @@ void print_s(va_list s)
 
 		write(1, str, 6);
 	}
+	return (0);
 }
+

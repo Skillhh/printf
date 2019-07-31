@@ -7,10 +7,8 @@
  */
 int _printf(const char *format, ...)
 {
-	print_t p[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{NULL, NULL}
+	print_t p[] = { {"c", print_c}, {"s", print_s}, {"d", print_d},
+		{"i", print_d}, {NULL, NULL}
 	};
 	va_list valist;
 	int i, j, len;
@@ -22,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%' && format[i + 1] != '%')
 			{
-				for (j = 0; j < 2; j++)
+				for (j = 0; j < 4; j++)
 				{
 					if (p[j].type[0] == format[i + 1])
 					{	
@@ -34,11 +32,10 @@ int _printf(const char *format, ...)
 			else if (format[i] == '%' && format[i + 1] == '%')
 			{
 				_putchar(format[i]);
+				j++;
 			}
 			else
-			{
 				_putchar(format[i]);
-			}
 		}
 	}
 	else
