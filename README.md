@@ -17,7 +17,7 @@ Declaration
 Following is the declaration for printf()function.
 prototype: int _printf(const char *format, ...);
 -----------
-##Specifer & Output
+Specifer & Output
 * format - This is the string taht contains the text to be written to stdout. it can optionally contain embedden format tags that are replaced by the values specified in subsequent additional arguments and formatted as requested.
 ------------
 Specifier & Output
