@@ -12,15 +12,15 @@
 typedef struct print
 {
 	char *type;
-	void (*func)(va_list);
+	int (*func)(va_list);
 } print_t;
 
 int _printf(const char *format, ...);
 
 int _putchar(char c);
 int _strlen(char *l);
-void _puts(char *str);
-void print_c(va_list c);
-void print_s(va_list s);
+int _puts(char *str);
+int print_c(va_list c);
+int print_s(va_list s);
 
 #endif  /* _HOLBERTON_H */
