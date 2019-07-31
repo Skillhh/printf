@@ -17,13 +17,13 @@ Declaration
 Following is the declaration for printf()function.
 prototype: int _printf(const char *format, ...);
 -----------
-##Specifer & Output
+Specifer & Output
 * format - This is the string taht contains the text to be written to stdout. it can optionally contain embedden format tags that are replaced by the values specified in subsequent additional arguments and formatted as requested.
 ------------
 Specifier & Output
 -----------
-*C: Character.
-*d or i: Signed decimal integer.
+-C: Character.
+-d or i: Signed decimal integer.
 *e: Scientific notation (mantissa/exponent) using e character.
 *E: Scientific notation (mantissa/exponent) using E character.
 *f: Decimal floating point.
