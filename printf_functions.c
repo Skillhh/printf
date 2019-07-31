@@ -3,17 +3,20 @@
 /**
 * print_c - prints a char
 * @c: char to print
+*Return: 1
 */
-void print_c(va_list c)
+int print_c(va_list c)
 {
 	_putchar(va_arg(c, int));
+	return (1);
 }
 
 /**
  * print_s - prints a string
  * @s: string to print
+ *Return: len
  */
-void print_s(va_list s)
+int print_s(va_list s)
 {
 	int len;
 
@@ -31,4 +34,6 @@ void print_s(va_list s)
 
 		write(1, str, 6);
 	}
+	return (len);
 }
+
