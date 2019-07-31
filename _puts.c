@@ -2,10 +2,10 @@
 /**
  *_puts - function that prints a strings
  *@str:  "I do not fear computers. I fear the lack of them - Isaac Asimov"
- *
+ *Return: int
  */
 
-void _puts(char *str)
+int _puts(char *str)
 
 {
 	int i;
@@ -14,5 +14,5 @@ void _puts(char *str)
 	{
 		_putchar(str[i]);
 	}
-	_putchar('\n');
+	return (i);
 }
