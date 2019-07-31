@@ -56,4 +56,6 @@ widith & Decription
 -----------
 Example
 ------------
-The following example shows the usage of printf() function.<br>
+The following 
+<img src = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiPupDX1d_jAhVNj1kKHehpBx0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dy8K0Z9VEFyw&psig=AOvVaw3EM61x0ubRw7vw4iWkwI6L&ust=1564679674720785">
+
