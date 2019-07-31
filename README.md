@@ -22,8 +22,8 @@ Specifer & Output
 ------------
 Specifier & Output
 -----------
--C: Character.
--d or i: Signed decimal integer.
+//C: Character.
+//d or i: Signed decimal integer.
 *e: Scientific notation (mantissa/exponent) using e character.
 *E: Scientific notation (mantissa/exponent) using E character.
 *f: Decimal floating point.
